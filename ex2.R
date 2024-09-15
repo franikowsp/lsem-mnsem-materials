@@ -26,6 +26,7 @@ fit_qua <- lm(data = health,
 summary(fit_qua)
 
 anova(fit_lin, fit_qua)
+summary(fit_qua)
 
 focal_points <- seq(min(health$per_ris_c), max(health$per_ris_c), length.out = 1000)
 trend <- emtrends(fit_qua, specs = ~ per_ris_c | ins_enr, var = "ins_enr", at = list(per_ris_c = focal_points)) 
